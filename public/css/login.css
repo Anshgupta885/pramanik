@@ -1,0 +1,76 @@
+/* Base Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    transition: background-color 0.3s;
+}
+
+/* Wrapper for the login page to handle centering */
+#loginPageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: #f5f6f8;
+}
+
+/* Styles for the login form container */
+#loginContainer {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+    position: relative;
+    transition: background 0.3s, color 0.3s;
+}
+
+#loginContainer h2 { margin-bottom: 10px; font-size: 22px; font-weight: 600; color: #111; }
+#loginContainer p { font-size: 14px; color: #666; margin-bottom: 20px; }
+.input-group { text-align: left; margin-bottom: 15px; }
+.input-group label { font-size: 14px; display: block; margin-bottom: 5px; color: #333; }
+.input-group input {
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+    font-size: 14px; background: #fff;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+.remember-forgot { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 13px; }
+.remember-forgot label { display: flex; align-items: center; gap: 5px; color: #333; }
+.remember-forgot a { color: #007BFF; text-decoration: none; }
+.remember-forgot a:hover { text-decoration: underline; }
+.btn {
+    width: 100%; padding: 12px; background: #111; color: #fff; font-size: 15px;
+    font-weight: 600; border: none; border-radius: 8px; cursor: pointer;
+    margin-bottom: 15px; transition: background 0.3s;
+}
+.btn:hover { background: #333; }
+.or { margin: 15px 0; font-size: 13px; color: #666; position: relative; }
+.or::before, .or::after {
+    content: ""; position: absolute; top: 50%; width: 40%;
+    height: 1px; background: #ddd;
+}
+.or::before { left: 0; }
+.or::after { right: 0; }
+.social-buttons { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.social-buttons button {
+    width: 48%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;
+    background: #fff; cursor: pointer; font-size: 14px;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+.social-buttons button:hover { background: #f1f1f1; }
+.signup { font-size: 13px; }
+.signup a { color: #007BFF; text-decoration: none; }
+.signup a:hover { text-decoration: underline; }
+.toggle-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; cursor: pointer; font-size: 20px; }
+
+/* Dark Mode Styles */
+body.dark #loginPageWrapper { background: #181818; }
+body.dark #loginContainer { background: #242424; color: #eee; box-shadow: 0 5px 20px rgba(255,255,255,0.05); }
+body.dark #loginContainer h2, body.dark .input-group label, body.dark .remember-forgot label { color: #eee; }
+body.dark #loginContainer p, body.dark .or { color: #aaa; }
+body.dark .input-group input { background: #2c2c2c; border: 1px solid #444; color: #eee; }
+body.dark .or::before, body.dark .or::after { background: #444; }
+body.dark .social-buttons button { background: #2c2c2c; border: 1px solid #444; color: #eee; }
+body.dark .social-buttons button:hover { background: #3a3a3a; }

@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="css/global.css">
+<div id="feedbackPage" class="page">
+    <div class="page-header">
+        <div class="feedback-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg></div>
+        <h1>We Value Your Feedback</h1>
+        <p>Help us improve Pramaanik by sharing your thoughts and suggestions</p>
+    </div>
+    <div class="feedback-form-section">
+        <div class="section-card">
+            <h3>Submit Feedback</h3>
+            <form id="feedbackForm" class="feedback-form">
+                <div class="form-row">
+                    <div class="form-group"><label for="feedbackName">Full Name *</label><input type="text" id="feedbackName" required=""></div>
+                    <div class="form-group"><label for="feedbackEmail">Email Address *</label><input type="email" id="feedbackEmail" required=""></div>
+                </div>
+                <div class="form-group"><label for="feedbackCategory">Feedback Category *</label><select id="feedbackCategory" required="">
+                        <option value="">Select a category</option>
+                        <option value="general">General Feedback</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="feature">Feature Request</option>
+                    </select></div>
+                <div class="form-group"><label>Overall Rating *</label>
+                    <div class="rating-group">
+                        <div class="star-rating" id="starRating"><span class="star" data-rating="1">★</span><span class="star" data-rating="2">★</span><span class="star" data-rating="3">★</span><span class="star" data-rating="4">★</span><span class="star" data-rating="5">★</span></div><span id="ratingText" class="rating-text">Select rating</span>
+                    </div>
+                </div>
+                <div class="form-group"><label for="feedbackMessage">Your Feedback *</label><textarea id="feedbackMessage" rows="6" placeholder="Please provide detailed feedback..." required=""></textarea></div>
+                <button type="submit" class="primary-btn full-width"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                    </svg> Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="css/global.css">
+<div id="verifyPage" class="page">
+    <div class="page-header">
+        <h1>Certificate Verification</h1>
+        <p>Upload a document or search by ID to verify authenticity</p>
+    </div>
+    <div class="upload-section">
+        <div class="section-card">
+            <h2>Verify by Document</h2>
+            <div id="uploadTab" class="tab-content active">
+                <div class="upload-area" id="uploadArea">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7,10 12,15 17,10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <h3>Upload Certificate</h3>
+                    <p>Drag and drop your certificate here, or click to browse</p>
+                    <button class="upload-btn">Choose File</button>
+                    <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" hidden="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
