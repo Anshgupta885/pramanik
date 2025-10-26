@@ -115,7 +115,7 @@ app.post('/verify', upload.single('certificate'), async (req, res) => {
 
 // 4. Start the Server
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/login.html');
+    res.sendFile(__dirname + '/public/home.html');
 });
 
 const PORT = 5000;
