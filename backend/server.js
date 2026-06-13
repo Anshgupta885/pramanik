@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const mongoose = require('mongoose');
 const router = require('./routes');
 const connectDB = require('./config/db');
 
@@ -12,6 +13,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(process.cwd(), 'frontend/public')));
 app.use('/', router);
+
+// Health check route for debugging
+app.get('/health', (req, res) => {
+    res.json({
+        status: 'ok',
+        time: new Date().toISOString(),
+        mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+        env: process.env.NODE_ENV
+    });
+});
 
 // Global Error Handler
 app.use((err, req, res, next) => {

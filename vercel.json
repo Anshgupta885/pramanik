@@ -1,16 +1,14 @@
 {
   "version": 2,
   "functions": {
-    "backend/server.js": {
-      "memory": 1024,
-      "maxDuration": 10,
+    "api/index.js": {
       "includeFiles": "{frontend/public/**,backend/data/**,eng.traineddata}"
     }
   },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/backend/server.js"
+      "destination": "/api/index.js"
     }
   ]
 }
