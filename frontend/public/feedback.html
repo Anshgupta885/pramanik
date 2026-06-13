@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="/global.css">
+<div id="feedbackPage" class="page">
+
+  <div class="page-header">
+    <div class="feedback-icon" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    </div>
+    <h1>Share Your Feedback</h1>
+    <p>Help us improve Pramaanik. Your thoughts shape the product.</p>
+  </div>
+
+  <div class="feedback-layout">
+
+    <!-- Form -->
+    <div class="section-card">
+      <div class="section-header" style="margin-bottom:1.5rem;">
+        <div class="section-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+          </svg>
+          <h3>Submit Feedback</h3>
+        </div>
+      </div>
+
+      <form id="feedbackForm" class="feedback-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="feedbackName">Full Name <span aria-hidden="true" style="color:var(--rose)">*</span></label>
+            <input type="text" id="feedbackName" placeholder="Your full name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="feedbackEmail">Email Address <span aria-hidden="true" style="color:var(--rose)">*</span></label>
+            <input type="email" id="feedbackEmail" placeholder="you@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedbackCategory">Feedback Category <span aria-hidden="true" style="color:var(--rose)">*</span></label>
+          <select id="feedbackCategory" required>
+            <option value="">Select a category</option>
+            <option value="general">💬 General Feedback</option>
+            <option value="bug">🐛 Bug Report</option>
+            <option value="feature">✨ Feature Request</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Overall Rating <span aria-hidden="true" style="color:var(--rose)">*</span></label>
+          <div class="rating-group" role="radiogroup" aria-label="Rating from 1 to 5 stars">
+            <div class="star-rating" id="starRating">
+              <span class="star" data-rating="1" role="radio" aria-label="1 star" tabindex="0">★</span>
+              <span class="star" data-rating="2" role="radio" aria-label="2 stars" tabindex="0">★</span>
+              <span class="star" data-rating="3" role="radio" aria-label="3 stars" tabindex="0">★</span>
+              <span class="star" data-rating="4" role="radio" aria-label="4 stars" tabindex="0">★</span>
+              <span class="star" data-rating="5" role="radio" aria-label="5 stars" tabindex="0">★</span>
+            </div>
+            <span id="ratingText" class="rating-text">Select a rating</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="feedbackMessage">Your Feedback <span aria-hidden="true" style="color:var(--rose)">*</span></label>
+          <textarea id="feedbackMessage" rows="5" placeholder="Tell us what you think — what's working well, what could be better..." required></textarea>
+        </div>
+
+        <button type="submit" class="primary-btn full-width">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+          </svg>
+          Send Feedback
+        </button>
+      </form>
+    </div>
+
+    <!-- Sidebar tips -->
+    <div>
+      <div class="feedback-tips">
+        <h4>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" stroke-width="2" style="vertical-align:middle;margin-right:0.5rem;">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          Tips for great feedback
+        </h4>
+        <div class="tip-item">
+          <span class="tip-icon">🎯</span>
+          <div class="tip-text">Be specific about what you experienced — steps you took help us reproduce issues.</div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">📸</span>
+          <div class="tip-text">Mention which page or feature you were using when you noticed the issue.</div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">💡</span>
+          <div class="tip-text">For feature requests, describe the problem you're trying to solve, not just the solution.</div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">⚡</span>
+          <div class="tip-text">We read every submission and aim to respond within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  const ratings = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+  const stars = document.querySelectorAll('.star');
+  const ratingText = document.getElementById('ratingText');
+  let selectedRating = 0;
+
+  function setStars(n) {
+    stars.forEach((s, i) => {
+      s.classList.toggle('active', i < n);
+      s.setAttribute('aria-checked', i < n ? 'true' : 'false');
+    });
+    ratingText.textContent = n ? ratings[n] : 'Select a rating';
+    selectedRating = n;
+  }
+
+  stars.forEach((star, idx) => {
+    star.addEventListener('click', () => setStars(idx + 1));
+    star.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setStars(idx + 1); }
+    });
+    star.addEventListener('mouseenter', () => {
+      stars.forEach((s, i) => s.style.color = i <= idx ? 'var(--amber)' : '');
+    });
+  });
+
+  document.getElementById('starRating').addEventListener('mouseleave', () => {
+    stars.forEach(s => s.style.color = '');
+    setStars(selectedRating);
+  });
+
+  document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('feedbackName').value.trim();
+    const email = document.getElementById('feedbackEmail').value.trim();
+    const category = document.getElementById('feedbackCategory').value;
+    const message = document.getElementById('feedbackMessage').value.trim();
+
+    if (!name || !email || !category || !message || !selectedRating) {
+      window.__toast && window.__toast('Please fill in all required fields.', 'warning');
+      return;
+    }
+
+    const btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      this.reset();
+      setStars(0);
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg> Send Feedback';
+      btn.disabled = false;
+      window.__toast && window.__toast('Feedback received — thank you!', 'success');
+    }, 1000);
+  });
+})();
+</script>

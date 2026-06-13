@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pramaanik — Certificate Verification</title>
+  <link rel="stylesheet" href="/global.css">
+</head>
+<body>
+  <div id="mainAppWrapper">
+
+    <!-- Desktop Nav -->
+    <nav class="navbar desktop-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <div class="nav-brand-logo" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <span class="platform-name">Prama<span>anik</span></span>
+        </div>
+
+        <div class="nav-menu" role="menubar">
+          <button class="nav-item active" data-page="home-content" role="menuitem">Home</button>
+          <button class="nav-item" data-page="verify" role="menuitem">Verify Certificate</button>
+          <button class="nav-item" data-page="wallet" role="menuitem">My Vault</button>
+          <button class="nav-item" data-page="feedback" role="menuitem">Feedback</button>
+          <button class="nav-item" data-page="contact" role="menuitem">Contact Us</button>
+        </div>
+
+        <div class="nav-auth">
+          <button id="loginBtn" class="login-btn" aria-label="Login to your account">Login</button>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+      <button class="nav-item active" data-page="home-content" aria-label="Home">
+        <span class="icon" aria-hidden="true">🏠</span>
+        <span class="label">Home</span>
+      </button>
+      <button class="nav-item" data-page="verify" aria-label="Verify Certificate">
+        <span class="icon" aria-hidden="true">✅</span>
+        <span class="label">Verify</span>
+      </button>
+      <button class="nav-item" data-page="wallet" aria-label="My Vault">
+        <span class="icon" aria-hidden="true">🎒</span>
+        <span class="label">Vault</span>
+      </button>
+      <button class="nav-item" data-page="feedback" aria-label="Feedback">
+        <span class="icon" aria-hidden="true">💬</span>
+        <span class="label">Feedback</span>
+      </button>
+      <button class="nav-item" data-page="contact" aria-label="Contact Us">
+        <span class="icon" aria-hidden="true">📞</span>
+        <span class="label">Contact</span>
+      </button>
+    </nav>
+
+    <main id="mainContent" role="main" aria-live="polite">
+      <!-- Dynamic content loaded here -->
+    </main>
+
+  </div>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="/app.js"></script>
+  <script src="/verify.js"></script>
+  <script src="/wallet.js"></script>
+</body>
+</html>

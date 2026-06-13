@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/global.css">
+<div id="walletPage" class="page">
+
+  <div class="page-header">
+    <div class="page-icon" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
+        <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
+        <path d="M18 12h.01"/>
+      </svg>
+    </div>
+    <h1>My Vault</h1>
+    <p>All your verified certificates, securely stored and instantly accessible.</p>
+  </div>
+
+  <!-- Wallet Stats -->
+  <div class="wallet-stats-row" id="walletStatsRow" style="display:none;">
+    <div class="wallet-stat">
+      <div class="wallet-stat-num" id="wStat-total">0</div>
+      <div class="wallet-stat-label">Total Certificates</div>
+    </div>
+    <div class="wallet-stat">
+      <div class="wallet-stat-num" style="color:var(--emerald);" id="wStat-verified">0</div>
+      <div class="wallet-stat-label">Verified</div>
+    </div>
+    <div class="wallet-stat">
+      <div class="wallet-stat-num" style="color:var(--amber);" id="wStat-suspicious">0</div>
+      <div class="wallet-stat-label">Suspicious</div>
+    </div>
+  </div>
+
+  <!-- Certificates grid -->
+  <div class="certificates-grid" id="walletGrid"></div>
+
+  <!-- Empty State -->
+  <div id="walletEmptyState" class="empty-state">
+    <div class="empty-state-icon" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
+        <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
+        <line x1="18" y1="12" x2="18" y2="12"/>
+      </svg>
+    </div>
+    <h2>Your Vault is Empty</h2>
+    <p>Successfully verified certificates will appear here automatically.</p>
+    <button class="primary-btn" onclick="window.__navigate && window.__navigate('verify')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7,10 12,15 17,10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Verify a Certificate
+    </button>
+  </div>
+
+</div>

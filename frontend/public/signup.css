@@ -1,0 +1,71 @@
+@import url('/login.css');
+
+#signupPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+#loginContainer.signup-container {
+  max-width: 720px;
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.signup-grid .input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group select {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 0.625rem;
+  font-size: 0.925rem;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  outline: none;
+  appearance: none;
+}
+
+.input-group select:focus {
+  background: rgba(79,70,229,0.08);
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+}
+
+body.light .input-group select {
+  background: #F1F5FF;
+  border-color: rgba(79,70,229,0.12);
+  color: #0A0F2E;
+}
+
+body.light .input-group select:focus {
+  background: white;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+}
+
+.input-group select option {
+  color: #0A0F2E;
+}
+
+@media (max-width: 720px) {
+  #loginContainer.signup-container {
+    max-width: 100%;
+  }
+
+  .signup-grid {
+    grid-template-columns: 1fr;
+  }
+}

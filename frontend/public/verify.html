@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="/global.css">
+<div id="verifyPage" class="page">
+
+  <div class="page-header">
+    <div class="page-icon" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    </div>
+    <h1>Certificate Verification</h1>
+    <p>Upload your document and we'll verify its authenticity against our secure database in seconds.</p>
+  </div>
+
+  <div class="upload-section">
+    <div class="section-card">
+      <div class="section-header" style="margin-bottom:1.5rem;">
+        <div class="section-label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--indigo)" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7,10 12,15 17,10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <h3>Upload Document</h3>
+        </div>
+        <span class="format-tag">PDF · JPG · PNG</span>
+      </div>
+
+      <div id="uploadArea" class="upload-area"
+           role="button" tabindex="0"
+           aria-label="Click or drag and drop to upload certificate"
+           ondragover="event.preventDefault(); this.classList.add('drag-over')"
+           ondragleave="this.classList.remove('drag-over')"
+           ondrop="event.preventDefault(); this.classList.remove('drag-over'); if(event.dataTransfer.files.length) handleFileVerification(event.dataTransfer.files[0])">
+
+        <div class="upload-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7,10 12,15 17,10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </div>
+        <h3>Drop your certificate here</h3>
+        <p>Drag and drop, or click to browse your files</p>
+        <button class="upload-btn" type="button" aria-label="Browse files to upload">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7,10 12,15 17,10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Choose File
+        </button>
+        <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" hidden aria-label="File input">
+        <div class="upload-formats" aria-label="Supported formats">
+          <span class="format-tag">PDF</span>
+          <span class="format-tag">JPG</span>
+          <span class="format-tag">JPEG</span>
+          <span class="format-tag">PNG</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info cards -->
+    <div class="verify-info-grid">
+      <div class="verify-info-card">
+        <div class="verify-info-icon" style="background:var(--indigo-100);color:var(--indigo);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="verify-info-title">Secure &amp; Private</div>
+          <div class="verify-info-text">Files are processed securely and only verified certificates are saved to your vault.</div>
+        </div>
+      </div>
+      <div class="verify-info-card">
+        <div class="verify-info-icon" style="background:var(--emerald-100);color:var(--emerald);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+        </div>
+        <div>
+          <div class="verify-info-title">Instant Results</div>
+          <div class="verify-info-text">AI-powered OCR returns verification results in under 10 seconds.</div>
+        </div>
+      </div>
+      <div class="verify-info-card">
+        <div class="verify-info-icon" style="background:#EDE9FE;color:#8B5CF6;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="verify-info-title">Auto-Saved</div>
+          <div class="verify-info-text">Verified certificates are automatically saved to your Vault.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.verify-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.verify-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 1.125rem;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.875rem;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.25s cubic-bezier(0.22,1,0.36,1);
+}
+.verify-info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.verify-info-icon {
+  width: 40px; height: 40px;
+  border-radius: 0.625rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+body.dark-theme .verify-info-icon[style*="indigo-100"] { background: rgba(79,70,229,0.15) !important; }
+body.dark-theme .verify-info-icon[style*="emerald-100"] { background: rgba(16,185,129,0.15) !important; }
+body.dark-theme .verify-info-icon[style*="EDE9FE"] { background: rgba(139,92,246,0.15) !important; }
+.verify-info-title { font-weight: 600; font-size: 0.875rem; color: var(--foreground); margin-bottom: 0.25rem; }
+.verify-info-text { font-size: 0.8rem; color: var(--muted-foreground); line-height: 1.5; }
+</style>

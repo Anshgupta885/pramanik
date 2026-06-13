@@ -1,0 +1,52 @@
+[
+  {
+    "certificateId": "CERT_2024_001",
+    "studentName": "Rahul Sharma",
+    "course": "Bachelor of Technology",
+    "originalName": "rahul-sharma-certificate.png",
+    "fileName": "CERT_2024_001.png",
+    "mimeType": "image/png",
+    "size": 248931,
+    "status": "Verified"
+  },
+  {
+    "certificateId": "CERT_2024_002",
+    "studentName": "Priya Patel",
+    "course": "Data Science Professional",
+    "originalName": "priya-patel-certificate.png",
+    "fileName": "CERT_2024_002.png",
+    "mimeType": "image/png",
+    "size": 251884,
+    "status": "Verified"
+  },
+  {
+    "certificateId": "CERT_2024_003",
+    "studentName": "Amit Singh",
+    "course": "Master of Business Administration",
+    "originalName": "amit-singh-certificate.png",
+    "fileName": "CERT_2024_003.png",
+    "mimeType": "image/png",
+    "size": 246120,
+    "status": "Verified"
+  },
+  {
+    "certificateId": "CERT_2024_004",
+    "studentName": "Sneha Reddy",
+    "course": "Bachelor of Arts",
+    "originalName": "sneha-reddy-certificate.png",
+    "fileName": "CERT_2024_004.png",
+    "mimeType": "image/png",
+    "size": 249507,
+    "status": "Verified"
+  },
+  {
+    "certificateId": "CERT_2024_005",
+    "studentName": "Vikram Kumar",
+    "course": "Certified Blockchain Developer",
+    "originalName": "vikram-kumar-certificate.png",
+    "fileName": "CERT_2024_005.png",
+    "mimeType": "image/png",
+    "size": 250142,
+    "status": "Verified"
+  }
+]
