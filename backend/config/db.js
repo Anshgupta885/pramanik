@@ -8,7 +8,7 @@ async function connectDB() {
         console.log('MongoDB connected successfully');
     } catch (error) {
         console.error('MongoDB connection failed:', error.message);
-        process.exit(1);
+        // Don't exit process in production/serverless environment
     }
 }
 

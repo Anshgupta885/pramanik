@@ -18,19 +18,19 @@ router.post('/register', registerUser);
 router.post('/logout', logoutUser);
 
 router.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/public/login.html'));
+    res.sendFile(path.join(process.cwd(), 'frontend/public/login.html'));
 });
 
 router.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/public/signup.html'));
+    res.sendFile(path.join(process.cwd(), 'frontend/public/signup.html'));
 });
 
 router.get('/verify-page', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/public/verify.html'));
+    res.sendFile(path.join(process.cwd(), 'frontend/public/verify.html'));
 });
 
 router.get('/wallet', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/public/wallet.html'));
+    res.sendFile(path.join(process.cwd(), 'frontend/public/wallet.html'));
 });
 
 router.get('/auth/me', verifyToken, (req, res) => {
@@ -104,7 +104,7 @@ router.post('/verify', verifyToken, upload.single('certificate'), async (req, re
 });
 
 router.get('/', (req, res) => {
-    res.sendFile(require('path').join(__dirname, '../../frontend/public/home.html'));
+    res.sendFile(path.join(process.cwd(), 'frontend/public/home.html'));
 });
 
 module.exports = router;
