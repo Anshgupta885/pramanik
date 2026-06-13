@@ -17,6 +17,22 @@ router.post('/login', loginUser);
 router.post('/register', registerUser);
 router.post('/logout', logoutUser);
 
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/public/login.html'));
+});
+
+router.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/public/signup.html'));
+});
+
+router.get('/verify-page', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/public/verify.html'));
+});
+
+router.get('/wallet', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/public/wallet.html'));
+});
+
 router.get('/auth/me', verifyToken, (req, res) => {
     return res.json({
         userId: req.user._id,

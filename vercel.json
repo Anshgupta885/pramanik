@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "functions": {
+    "backend/server.js": {
+      "runtime": "vercel-node@latest",
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/login",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/register",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/logout",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/signup",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/verify-page",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/wallet",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/auth/me",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/certificates",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/verify",
+      "destination": "/backend/server.js"
+    },
+    {
+      "source": "/",
+      "destination": "/frontend/public/home.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/public/$1"
+    }
+  ]
+}
